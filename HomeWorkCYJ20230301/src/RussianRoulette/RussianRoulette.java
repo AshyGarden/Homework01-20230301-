@@ -23,11 +23,11 @@ public class RussianRoulette {
 		roulette ruleMas = new roulette();
 	
 		//게임 인원 입력
-		ruleMas.players =0;
-		ruleMas.bullets =0;
-		ruleMas.counter =0;
+		//ruleMas.players =0;
+		//ruleMas.bullets =0;
+		//ruleMas.counter =0;
 		
-		System.out.println("게임 인원을 입력해주세요");	
+		System.out.print("게임 인원을 입력해주세요: ");	
 		ruleMas.howManyPerson(ruleMas.players);		
 		
 		//플레이어 이름 등록하고
@@ -35,12 +35,13 @@ public class RussianRoulette {
 		//배열의 크기는 게임 참가자의 명수와 동일합니다.
 		//System.out.printf("%d명으로 게임을 시작했습니다.", players);
 		
-		
-		ruleMas.startGames(ruleMas.players,ruleMas.playerNames);
-		
+		System.out.printf("%d명으로 게임을 시작했습니다.", ruleMas.players);
+		ruleMas.inputPlayerNames(ruleMas.players);	
 						
+		//ruleMas.startGames(ruleMas.players,ruleMas.playerNames);
+		
 		//실탄 개수 입력(1미만이면 안되고, 5초과도 안됩니다.)
-		System.out.println("게임에 쓰일 탄환수를 입력해주세요");	
+		System.out.print("게임에 쓰일 탄환수를 입력해주세요: ");	
 		ruleMas.loadBullets(ruleMas.bullets);
 		
 		//실탄을 탄창에 배치

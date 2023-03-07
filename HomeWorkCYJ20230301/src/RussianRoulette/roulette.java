@@ -9,7 +9,7 @@ public class roulette {
 	int bullets = 0; //쓰일 탄환수
 	int loadCounter = 0; //로디드 카운터(몇발장전되었는지 확인)
 	int counter = 0;
-	String[] playerNames = new String[players];
+	String[] playerNames = {};
 	void howManyPerson(int playersCount) {
 		playersCount = sc.nextInt();				
 		while (true){
@@ -19,22 +19,39 @@ public class roulette {
 			System.out.print("게임인원이 너무 많습니다. 다시입력해주세요\n");
 		} else {
 			players = playersCount;
+			playerNames = new String[playersCount];
 			break;					
 		}
 		
 		}
 	}
-	
-	void startGames(int pNums, String[] pNames) {	//n명으로 게임시작	
-		System.out.printf("%d명으로 게임을 시작했습니다.", pNums);
-	//	return 0;	
-		
-		for(int i=0; i<pNames.length; i++) {
-			System.out.printf("%번째 플레이어이름을 입력해주세요.",i+1);
-			pNames[i] = sc.next();	
-			playerNames[i] = pNames[i];
+	void inputPlayerNames(int inputPlayers) {
+		for(int i=0; i<players; i++) {			
+			System.out.printf("%d번째 플레이어이름을 입력해주세요.",i+1);
+			playerNames[i] = sc.next();	
+			counter++;
+			
+			if(counter == inputPlayers)
+				break;
 		}
 	}
+	
+	
+//	void startGames(int pNums, String[] pNames) {	//n명으로 게임시작	
+//		
+//	//	return 0;		
+//		String[] temp = new String[pNums];
+//		for(int i=0; i<pNames.length; i++) {
+//			System.out.printf("%번째 플레이어이름을 입력해주세요.",i+1);
+//			pNames[i] = sc.next();			
+//			temp[i] = pNames[i];
+//			playerNames[i] = temp[i];
+//		}
+//		playerNames = temp;
+//		temp = null;
+//	}
+//	
+	
 	
 	void loadBullets(int inputBullets) { //장전함수
 		inputBullets = sc.nextInt();
